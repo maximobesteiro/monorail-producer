@@ -16,7 +16,7 @@ object Main {
   }
 
   def validateArgs(args: Array[String]): Boolean = {
-    val isValid = args.length == 4 || args(2).toInt > 0
+    val isValid = args.length == 4 && args(2).toInt > 0
     isValid && Environment.fromName(args(0)).isDefined
   }
 

@@ -38,7 +38,7 @@ object Environment extends Enum {
 
   val LOCAL = new EnumVal("localhost", 8888) {val name = "local"}
   val RC = new EnumVal("monorail-in-00.servers.despegar.it", 9290) {val name = "rc"}
-  val PROD = new EnumVal("prod.host", 9290) {val name = "prod"}
+  val PROD = new EnumVal("proxy.despexds.net", 80) {val name = "prod"}
 
   def fromName(name: String) = {
     values.find(e => e.name == name)
