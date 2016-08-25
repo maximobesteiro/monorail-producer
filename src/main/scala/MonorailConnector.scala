@@ -11,7 +11,7 @@ import akka.stream.scaladsl.{Flow, Sink, Source}
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
-class MonorailConnector(environment: Environment.EnumVal) {
+class MonorailConnector(environment: Environment.EnumVal, topic: String) {
 
   implicit val system = ActorSystem()
   implicit val materializer = ActorMaterializer()
@@ -28,7 +28,7 @@ class MonorailConnector(environment: Environment.EnumVal) {
       s"""
         |{
         | "application":"monorail-producer-test-app",
-        | "topic":"seq-nums",
+        | "topic":"$topic",
         | "event":"$event"
         |}
       """.stripMargin
